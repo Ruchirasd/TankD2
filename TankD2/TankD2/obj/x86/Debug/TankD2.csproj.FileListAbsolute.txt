@@ -1,0 +1,8 @@
+C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.csprojResolveAssemblyReference.cache
+C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.csproj.GenerateResource.Cache
+C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.GUI.Illustrate.resources
+C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\bin\x86\Debug\TankD2.exe
+C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\bin\x86\Debug\TankD2.pdb
+C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.exe
+C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.pdb
