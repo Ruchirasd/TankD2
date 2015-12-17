@@ -72,8 +72,9 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\Background.cs" />
+    <Compile Include="Controllers\BackgroundCon.cs" />
     <Compile Include="Controllers\Connection.cs" />
+    <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\GameCanvas.cs" />
     <Compile Include="GUI\Illustrate.cs" />
     <Compile Include="GUI\Illustrate.designer.cs">

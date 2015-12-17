@@ -20,7 +20,7 @@ namespace TankD2
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         GraphicsDevice device;
-        Background background;
+        BackgroundCon background;
 
         public Game1()
         {
@@ -36,8 +36,8 @@ namespace TankD2
         /// </summary>
         protected override void Initialize()
         {
-            graphics.PreferredBackBufferWidth = 500;
-            graphics.PreferredBackBufferHeight = 500;
+            graphics.PreferredBackBufferWidth = 600;
+            graphics.PreferredBackBufferHeight = 600;
             graphics.IsFullScreen = false;
             graphics.ApplyChanges();
             Window.Title = "TankD2";
@@ -53,8 +53,9 @@ namespace TankD2
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            background = new Background( Content, spriteBatch, graphics);
+            background = new BackgroundCon( Content, spriteBatch, graphics);
             device = graphics.GraphicsDevice;
+            background.LoadContent();
             // TODO: use this.Content to load your game content here
         }
 
@@ -90,8 +91,12 @@ namespace TankD2
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            background.Draw();
+            
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
