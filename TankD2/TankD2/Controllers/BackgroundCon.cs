@@ -49,6 +49,17 @@ namespace TankD2.Controllers
             screenHeight = device.PresentationParameters.BackBufferHeight;
             Rectangle screenRectangle = new Rectangle(0, 0, screenWidth, screenHeight);
              spriteBatch.Draw(backgroundTexture, screenRectangle, Color.White);
+
+            for(int i = 0; i < 10; i++)
+            {
+                for(int j = 0; j < 10; j++)
+                {
+                    int posx = size * i + space * (i + 1);
+                    int posy = size * j + space * (j + 1);
+                    Rectangle cellRectangle = new Rectangle(posx, posy, size, size);
+                    spriteBatch.Draw(cell, cellRectangle, Color.White);
+                }
+            }
          }
 
     }
