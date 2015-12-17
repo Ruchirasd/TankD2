@@ -33,7 +33,11 @@ namespace TankD2
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            graphics.PreferredBackBufferWidth = 500;
+            graphics.PreferredBackBufferHeight = 500;
+            graphics.IsFullScreen = false;
+            graphics.ApplyChanges();
+            Window.Title = "TankD2";
 
             base.Initialize();
         }
