@@ -28,3 +28,5 @@ C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.GUI.Illus
 C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.csproj.GenerateResource.Cache
 C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.exe
 C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.pdb
+D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\background.xnb
+D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\cell.xnb
