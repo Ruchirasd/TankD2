@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TankD2.Canvas_Structure;
 
-namespace TankD2
+namespace TankD2.Controllers
 {
     class GameCanvas
 

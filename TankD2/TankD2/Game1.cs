@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using TankD2.Controllers;
 
 namespace TankD2
 {
@@ -18,6 +19,8 @@ namespace TankD2
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        GraphicsDevice device;
+        Background background;
 
         public Game1()
         {
@@ -50,7 +53,8 @@ namespace TankD2
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            background = new Background( Content, spriteBatch, graphics);
+            device = graphics.GraphicsDevice;
             // TODO: use this.Content to load your game content here
         }
 
