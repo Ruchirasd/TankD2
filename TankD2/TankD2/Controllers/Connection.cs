@@ -9,7 +9,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace TankD2
+namespace TankD2.Controllers
 {
     class Connection
     {

@@ -45,10 +45,10 @@ namespace TankD2.Client
         }
 
 
-        public static void Main(String []args) {
+        /*public static void Main(String []args) {
             new Connection().ConnectToServer();
         
-        }
+        }*/
 
      }
 }

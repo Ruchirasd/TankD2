@@ -1,4 +1,4 @@
-﻿namespace TankD2
+﻿/*namespace TankD2
 {
     partial class Illustrate
     {
@@ -62,4 +62,4 @@
         private System.Windows.Forms.TextBox textBox1;
 
     }
-}
+}*/
