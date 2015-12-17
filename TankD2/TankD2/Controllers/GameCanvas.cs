@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TankV1.Canvas_Structure;
+using TankD2.Canvas_Structure;
 
-namespace TankV1
+namespace TankD2
 {
     class GameCanvas
 
