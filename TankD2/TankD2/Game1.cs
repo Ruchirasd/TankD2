@@ -26,6 +26,7 @@ namespace TankD2
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            Connection connection = new Connection();
         }
 
         /// <summary>
