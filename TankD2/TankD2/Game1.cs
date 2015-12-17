@@ -36,8 +36,8 @@ namespace TankD2
         /// </summary>
         protected override void Initialize()
         {
-            graphics.PreferredBackBufferWidth = 600;
-            graphics.PreferredBackBufferHeight = 600;
+            graphics.PreferredBackBufferWidth = 555;
+            graphics.PreferredBackBufferHeight = 555;
             graphics.IsFullScreen = false;
             graphics.ApplyChanges();
             Window.Title = "TankD2";
