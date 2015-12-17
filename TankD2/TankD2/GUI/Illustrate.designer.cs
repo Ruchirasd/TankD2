@@ -1,4 +1,4 @@
-﻿namespace TankV1
+﻿namespace TankD2
 {
     partial class Illustrate
     {

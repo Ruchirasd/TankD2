@@ -14,7 +14,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace TankV1
+namespace TankD2
 {
     public partial class Illustrate : Form
     {

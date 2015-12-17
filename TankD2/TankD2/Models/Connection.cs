@@ -9,7 +9,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace TankV1.Client
+namespace TankD2.Client
 {
     class Connection
     {
