@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using TankD2.Controllers;
+using System.Threading;
 
 namespace TankD2
 {
@@ -23,21 +24,32 @@ namespace TankD2
         BackgroundCon background;
         Connection connection;
         KeyboardState oldState;
+        public delegate void ListenerDel(object sender);
+        private void RaiseGameStartingEvent(Connection c)
+        {
+            // Safely invoke an event:
+            ListenerDel temp = c.ReceiveData;
+            if (temp != null)
+            {
+                temp(null);
+            }
+        }
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             connection = new Connection();
+            ThreadPool.QueueUserWorkItem(new WaitCallback(connection.ReceiveData), null);
             Console.WriteLine("Start");
             connection.ConnectToServer("JOIN#");
-            connection.InitializeBackGroundThreads();
+            //connection.InitializeBackGroundThreads();
            
 
             
             
         }
-
+        
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic

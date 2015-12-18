@@ -1,2 +1,5 @@
-Content\cell.xnb
 Content\background.xnb
+Content\cell.xnb
+Content\briks.xnb
+Content\stones.xnb
+Content\water.xnb

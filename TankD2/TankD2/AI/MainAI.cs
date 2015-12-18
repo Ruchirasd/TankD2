@@ -21,7 +21,7 @@ namespace TankD2.AI
                 for(int j = 0; j < 10; j++)
                 {
 
-                    cellObjects[i,j]
+                    
                 }
             }
         }
