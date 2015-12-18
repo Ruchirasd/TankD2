@@ -12,7 +12,7 @@ namespace TankD2.Controllers
    
 
     {
-        string[,] cells = new string[10,10];
+        public static string[,] cells = new string[10,10];
         CanvasStructure[,] cellObjects = new CanvasStructure[10, 10];     
         
         int noOfBricks = 0;
@@ -43,6 +43,10 @@ namespace TankD2.Controllers
                 Console.WriteLine();
             }
 
+        }
+
+        public static string[,] getCells() {
+            return cells;
         }
 
 

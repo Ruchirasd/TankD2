@@ -76,6 +76,7 @@
     <Compile Include="Controllers\Connection.cs" />
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\GameCanvas.cs" />
+    <Compile Include="Controllers\GameEngine.cs" />
     <Compile Include="GUI\Illustrate.cs" />
     <Compile Include="GUI\Illustrate.designer.cs">
       <DependentUpon>Illustrate.cs</DependentUpon>

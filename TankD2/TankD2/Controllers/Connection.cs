@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+
 
 using System.IO;
 using System.Net;
@@ -21,14 +23,16 @@ namespace TankD2.Controllers
         private static GameCanvas g = new GameCanvas();
         private  TcpClient client;
         private TcpListener listner;
-        private NetworkStream serverStream; 
+        private NetworkStream serverStream;
 
+
+        private BackgroundWorker listenerThread = new BackgroundWorker();
         public void  ReceiveData() {
             listner = new TcpListener(IPAddress.Parse(SERVER_IP), SERVER_PORT);
             
                 listner.Start();
                 Console.Write("Server started.....");
-
+               
                 Socket connection;
                
                 while (true)
@@ -54,47 +58,10 @@ namespace TankD2.Controllers
                         String reply = Encoding.UTF8.GetString(inputStr.ToArray());
 
                     //Console.Write(reply);
-                        
+                      
+                        ThreadPool.QueueUserWorkItem(new WaitCallback(GameEngine.Resolve), reply);
                         this.serverStream.Close();
-                    switch (reply) {
-                        case "PLAYERS_FULL#":
-                            Console.Write("PLAYERS_FULL");
-                            break;
-                        case "ALREADY_ADDED#":
-                            Console.Write("ALREADY_ADDED");
-                            break;
-                        case "GAME_ALREADY_STARTED#":
-                            Console.Write("GAME_ALREADY_STARTED");
-                            break;
-                        case "OBSTACLE#":
-                            Console.Write("OBSTACLE");
-                            break;
-                        case "CELL_OCCUPIED#":
-                            Console.Write("CELL_OCCUPIED");
-                            break;
-                        case "DEAD#":
-                            Console.Write("DEAD");
-                            break;
-                        case "TOO_QUICK#":
-                            Console.Write("TOO_QUICK");
-                            break;
-                        case "GAME_HAS_FINISHED#":
-                            Console.Write("GAME_HAS_FINISHED");
-                            break;
-                        case "GAME_NOT_STARTED_YET#":
-                            Console.Write("GAME_NOT_STARTED_YET");
-                            break;
-                        case "INVALID_CELL#":
-                            Console.Write("INVALID_CELL");
-                            break;
-                        default:
-                            g.clientConnected(reply);
-                            break;
-                              
-                    }
-                       
-                        
-                       
+                  
                     }
                 }
 
@@ -114,12 +81,15 @@ namespace TankD2.Controllers
                 writer = new BinaryWriter(client.GetStream());
                 Byte[] tempStr = Encoding.ASCII.GetBytes(msg);
                 writer.Write(tempStr);
-                client.Close();
+               
                 if (client.Connected)
                 {
                     Console.WriteLine("connected......");
                 }
-
+                else {
+                    Console.WriteLine("not connected");
+                }
+                client.Close();
             }catch(SocketException e){
                 Console.WriteLine("unable to connect server");
             
@@ -127,8 +97,19 @@ namespace TankD2.Controllers
             
         }
 
+        public void InitializeBackGroundThreads()
+        {
+           
+            listenerThread.DoWork += new DoWorkEventHandler(listenerThread_DoWork);
+            Console.WriteLine("St");
+            
+        }
 
-        
+        public void listenerThread_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Console.WriteLine("St2");
+            ReceiveData();
+        }
 
      }
 }

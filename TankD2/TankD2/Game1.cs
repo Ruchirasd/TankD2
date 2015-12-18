@@ -21,12 +21,21 @@ namespace TankD2
         SpriteBatch spriteBatch;
         GraphicsDevice device;
         BackgroundCon background;
+        Connection connection;
+        KeyboardState oldState;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            Connection connection = new Connection();
+            connection = new Connection();
+            Console.WriteLine("Start");
+            connection.ConnectToServer("JOIN#");
+            connection.InitializeBackGroundThreads();
+           
+
+            
+            
         }
 
         /// <summary>
@@ -42,6 +51,8 @@ namespace TankD2
             graphics.IsFullScreen = false;
             graphics.ApplyChanges();
             Window.Title = "TankD2";
+
+            oldState = Keyboard.GetState();
 
             base.Initialize();
         }
@@ -81,8 +92,14 @@ namespace TankD2
                 this.Exit();
 
             // TODO: Add your update logic here
-
+          
             base.Update(gameTime);
+            UpdateInput();
+            spriteBatch.Begin();
+            background.Draw();
+
+            spriteBatch.End();
+          
         }
 
         /// <summary>
@@ -101,5 +118,47 @@ namespace TankD2
 
             base.Draw(gameTime);
         }
+
+        private void UpdateInput()
+        {
+            KeyboardState newState = Keyboard.GetState();
+
+            // Is the SPACE key down?
+            if (newState.IsKeyDown(Keys.Space) && !oldState.IsKeyDown(Keys.Space))
+            {
+                Console.WriteLine("Space");
+                connection.ConnectToServer("SHOOT#");
+                
+            }
+            else if (newState.IsKeyDown(Keys.Up) && !oldState.IsKeyDown(Keys.Up))
+            {
+                Console.WriteLine("Up");
+                connection.ConnectToServer("UP#");
+            
+            }
+            else if (newState.IsKeyDown(Keys.Down) && !oldState.IsKeyDown(Keys.Down))
+            {
+                Console.WriteLine("Down");
+                connection.ConnectToServer("DOWN#");  
+
+            }
+            else if (newState.IsKeyDown(Keys.Right) && !oldState.IsKeyDown(Keys.Right))
+            {
+                Console.WriteLine("Right");
+                connection.ConnectToServer("RIGHT#");
+
+            }
+            else if (newState.IsKeyDown(Keys.Left) && !oldState.IsKeyDown(Keys.Left))
+            {
+                Console.WriteLine("left");
+                connection.ConnectToServer("LEFT#");
+
+            }
+
+            oldState = newState;
+
+
+        }
+
     }
 }
