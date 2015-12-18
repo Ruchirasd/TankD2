@@ -72,6 +72,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI\MainAI.cs" />
     <Compile Include="Controllers\BackgroundCon.cs" />
     <Compile Include="Controllers\Connection.cs" />
     <Compile Include="Controllers\Controller.cs" />
@@ -83,7 +84,6 @@
     <Compile Include="Models\Brick.cs" />
     <Compile Include="Models\CanvasStructure.cs" />
     <Compile Include="Models\Coin.cs" />
-    <Compile Include="Models\Connection.cs" />
     <Compile Include="Models\LifePack.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Stone.cs" />

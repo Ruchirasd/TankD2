@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TankD2.Canvas_Structure;
+using TankD2.Models;
 
 namespace TankD2.Controllers
 {
@@ -13,7 +13,7 @@ namespace TankD2.Controllers
 
     {
         string[,] cells = new string[10,10];
-        CanvasStructure[,] cellObjects = new CanvasStructure[10, 10];     
+        public CanvasStructure[,] cellObjects = new CanvasStructure[10, 10];     
         
         int noOfBricks = 0;
         string[,] bricksCondition; 
@@ -25,7 +25,7 @@ namespace TankD2.Controllers
                 for (int j = 0; j < 10; j++)
                 {
                     cells[i, j] = "N";
-                    //cellObjects[i, j] = new CanvasStructure();
+                    cellObjects[i, j] = new CanvasStructure();
                     
                 }
             }
@@ -96,6 +96,10 @@ namespace TankD2.Controllers
             //Console.Write("Lenght of cordinte arr" + cordinates.Length);
             cells[Int32.Parse(cordinates[0]), Int32.Parse(cordinates[1])] = player[0];
 
+            //player[0]=name, player[1]=cordinates, player[2]=direction
+            Player playerObject = new Player(player[0], cordinates[0], cordinates[1], player[2]);
+            cellObjects[Int32.Parse(cordinates[0]), Int32.Parse(cordinates[1])] = playerObject;
+
         }
 
 
@@ -120,13 +124,28 @@ namespace TankD2.Controllers
                     switch (i) {
                         case 2:
                             cells[Int32.Parse(xy[1]), Int32.Parse(xy[0])] = "B";
+
+                           //creating brick object
+                            Brick brick = new Brick ( xy[1], xy[0], 0.ToString());
+                            cellObjects[Int32.Parse(xy[1]), Int32.Parse(xy[0])] = brick;
+
                             noOfBricks++;
                             break;
                         case 3:
                             cells[Int32.Parse(xy[1]), Int32.Parse(xy[0])] = "S";
+                            
+                           //creating stone pbject
+                           Stone stone = new Stone(xy[1], xy[0]);
+                            cellObjects[Int32.Parse(xy[1]), Int32.Parse(xy[0])] = stone;
+
                             break;
                         case 4:
                             cells[Int32.Parse(xy[1]), Int32.Parse(xy[0])] = "W";
+
+                            //creating watetr object
+                            Water water = new Water(xy[1], xy[0]);
+                            cellObjects[Int32.Parse(xy[1]), Int32.Parse(xy[0])] = water;
+
                             break;
                         default:
                             Console.Write("Something went wrong in initialization");

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TankD2.Canvas_Structure
+namespace TankD2.Models
 {
     class Coin: CanvasStructure
     {

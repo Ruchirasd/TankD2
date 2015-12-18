@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using TankD2.Models;
 
 
 namespace TankD2.Controllers
@@ -49,6 +50,10 @@ namespace TankD2.Controllers
             screenHeight = device.PresentationParameters.BackBufferHeight;
             Rectangle screenRectangle = new Rectangle(0, 0, screenWidth, screenHeight);
              spriteBatch.Draw(backgroundTexture, screenRectangle, Color.White);
+
+            //Aquiring the game object array 
+            GameCanvas gamecanvas = new GameCanvas();
+            CanvasStructure [,] cellObjects = gamecanvas.cellObjects;
 
             for(int i = 0; i < 10; i++)
             {
