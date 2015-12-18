@@ -20,14 +20,14 @@ namespace TankD2.Controllers
         private   BinaryWriter writer;
         private const string CLIENT_IP = "localhost";
         private const int CLIENT_PORT = 6000;
-        private static GameCanvas g = new GameCanvas();
         private  TcpClient client;
         private TcpListener listner;
         private NetworkStream serverStream;
 
 
         private BackgroundWorker listenerThread = new BackgroundWorker();
-        public void  ReceiveData() {
+        public void ReceiveData(object sender)
+        {
             listner = new TcpListener(IPAddress.Parse(SERVER_IP), SERVER_PORT);
             
                 listner.Start();
@@ -57,7 +57,7 @@ namespace TankD2.Controllers
 
                         String reply = Encoding.UTF8.GetString(inputStr.ToArray());
 
-                    //Console.Write(reply);
+                    Console.Write(reply);
                       
                         ThreadPool.QueueUserWorkItem(new WaitCallback(GameEngine.Resolve), reply);
                         this.serverStream.Close();
@@ -76,6 +76,8 @@ namespace TankD2.Controllers
 
             try
             {
+                
+                    
                 client = new TcpClient();
                 client.Connect(CLIENT_IP, CLIENT_PORT);
                 writer = new BinaryWriter(client.GetStream());
@@ -97,7 +99,7 @@ namespace TankD2.Controllers
             
         }
 
-        public void InitializeBackGroundThreads()
+      public void InitializeBackGroundThreads()
         {
            
             listenerThread.DoWork += new DoWorkEventHandler(listenerThread_DoWork);
@@ -108,7 +110,7 @@ namespace TankD2.Controllers
         public void listenerThread_DoWork(object sender, DoWorkEventArgs e)
         {
             Console.WriteLine("St2");
-            ReceiveData();
+            ReceiveData(null);
         }
 
      }
