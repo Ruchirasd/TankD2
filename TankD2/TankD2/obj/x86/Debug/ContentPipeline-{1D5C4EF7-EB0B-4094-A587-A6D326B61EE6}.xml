@@ -2,15 +2,6 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>cell.jpg</Source>
-      <Name>cell</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\Content\cell.xnb</Output>
-      <Time>2015-12-17T20:30:19.4329821+05:30</Time>
-    </Item>
-    <Item>
       <Source>background.jpg</Source>
       <Name>background</Name>
       <Importer>TextureImporter</Importer>
@@ -20,13 +11,13 @@
       <Time>2015-12-17T20:31:15.4191332+05:30</Time>
     </Item>
     <Item>
-      <Source>water.jpg</Source>
-      <Name>water</Name>
+      <Source>cell.jpg</Source>
+      <Name>cell</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\bin\x86\Debug\Content\water.xnb</Output>
-      <Time>2015-12-17T20:45:55.9185843+05:30</Time>
+      <Output>D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\Content\cell.xnb</Output>
+      <Time>2015-12-18T09:35:02.8041867+05:30</Time>
     </Item>
     <Item>
       <Source>briks.jpg</Source>
@@ -34,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\bin\x86\Debug\Content\briks.xnb</Output>
-      <Time>2015-12-17T20:46:07.1662285+05:30</Time>
+      <Output>D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\Content\briks.xnb</Output>
+      <Time>2015-12-18T09:35:25.9565404+05:30</Time>
     </Item>
     <Item>
       <Source>stones.jpg</Source>
@@ -43,8 +34,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Yamuna\Source\Repos\TankD2\TankD2\TankD2\bin\x86\Debug\Content\stones.xnb</Output>
-      <Time>2015-12-17T20:58:08.1013847+05:30</Time>
+      <Output>D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\Content\stones.xnb</Output>
+      <Time>2015-12-18T09:35:37.6544788+05:30</Time>
+    </Item>
+    <Item>
+      <Source>water.jpg</Source>
+      <Name>water</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\Content\water.xnb</Output>
+      <Time>2015-12-18T09:36:43.9156325+05:30</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

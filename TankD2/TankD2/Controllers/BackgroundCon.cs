@@ -57,8 +57,8 @@ namespace TankD2.Controllers
              spriteBatch.Draw(backgroundTexture, screenRectangle, Color.White);
 
             //Aquiring the game object array 
-            GameCanvas gamecanvas = new GameCanvas();
-            CanvasStructure [,] cellObjects = gamecanvas.cellObjects;
+            //GameCanvas gamecanvas = new GameCanvas();
+            //CanvasStructure [,] cellObjects = gamecanvas.cellObjects;
 
             for(int i = 0; i < 10; i++)
             {

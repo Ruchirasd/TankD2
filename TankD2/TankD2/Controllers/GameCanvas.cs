@@ -97,8 +97,8 @@ namespace TankD2.Controllers
             cells[Int32.Parse(cordinates[0]), Int32.Parse(cordinates[1])] = player[0];
 
             //player[0]=name, player[1]=cordinates, player[2]=direction
-            Player playerObject = new Player(player[0], cordinates[0], cordinates[1], player[2]);
-            cellObjects[Int32.Parse(cordinates[0]), Int32.Parse(cordinates[1])] = playerObject;
+            Player myTank = new Player(1,player[0], cordinates[0], cordinates[1], player[2]);
+            cellObjects[Int32.Parse(cordinates[0]), Int32.Parse(cordinates[1])] = myTank;
 
         }
 

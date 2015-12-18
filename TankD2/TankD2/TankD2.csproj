@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI\MainAI.cs" />
+    <Compile Include="AI\TankOperation.cs" />
     <Compile Include="Controllers\BackgroundCon.cs" />
     <Compile Include="Controllers\Connection.cs" />
     <Compile Include="Controllers\Controller.cs" />

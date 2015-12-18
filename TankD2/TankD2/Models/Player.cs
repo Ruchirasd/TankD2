@@ -10,12 +10,39 @@ namespace TankD2.Models
     {
         String direction;
         String name;
+        int status; //status=1 when this is our player otherwise it is zero
     
-        public Player(String name,String x, String y, String direction) : base(x, y) {
+        public Player(int status,String name,String x, String y, String direction) : base(x, y) {
             this.direction = direction;
             this.name = name;
+            this.status = status;
 
         }
 
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
+        }
+
+        public int Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
     }
 }
