@@ -13,7 +13,7 @@ namespace TankD2.Controllers
 
     {
         public static string[,] cells = new string[10,10];
-        public CanvasStructure[,] cellObjects = new CanvasStructure[10, 10];     
+        public static CanvasStructure[,] cellObjects = new CanvasStructure[10, 10];     
         
         int noOfBricks = 0;
         string[,] bricksCondition; 
