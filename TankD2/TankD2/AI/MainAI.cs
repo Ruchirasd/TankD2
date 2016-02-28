@@ -50,7 +50,13 @@ namespace TankD2.AI
             objectType = cellObjects[myPlayerX+1, myPlayerY].GetType();
             if (objectType != typeof(Brick) && objectType != typeof(Stone) && objectType != typeof(Water))
             {
-                tankOp.MoveLeft(myTank);
+                if (objectType == typeof(Player))
+                {
+                    //have to shoot or move to another location
+
+                }
+               else
+                    tankOp.MoveLeft(myTank);
             }
 
 

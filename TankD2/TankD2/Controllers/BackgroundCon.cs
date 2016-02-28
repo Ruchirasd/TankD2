@@ -19,6 +19,9 @@ namespace TankD2.Controllers
         private Texture2D stone;
         private Texture2D t_up;
         private Texture2D brick;
+        private Texture2D coin;
+        private Texture2D lifePack;
+
         private Texture2D backgroundTexture;
         private GameCanvas gameCanvas;
         GraphicsDevice device;
@@ -26,7 +29,7 @@ namespace TankD2.Controllers
         int screenHeight;
         const int space = 5;
         const int size = 50;
-
+        public static int state = 0; //0=>start menu ,1=>game
 
          internal BackgroundCon( ContentManager c, SpriteBatch s, GraphicsDeviceManager gr) : base(c, s,gr)
         {
@@ -38,35 +41,48 @@ namespace TankD2.Controllers
              device = grx.GraphicsDevice;
              water = content.Load<Texture2D>("water");
              stone = content.Load<Texture2D>("stones");
-            // t_up = content.Load<Texture2D>("t_up");
+            t_up = content.Load<Texture2D>("t_up");
              brick= content.Load<Texture2D>("briks");
-             backgroundTexture = content.Load<Texture2D>("background");
+            coin= content.Load<Texture2D>("coin");
+            lifePack = content.Load<Texture2D>("lifepack");
+            backgroundTexture = content.Load<Texture2D>("background");
              screenWidth = device.PresentationParameters.BackBufferWidth;
              screenHeight = device.PresentationParameters.BackBufferHeight;
             cell = content.Load<Texture2D>("cell");
 
         }
 
+
          public override void Draw()
          {
+             switch(state){
+                 case 0: drawMenu();
+                     break;
+                 case 1: drawGame();
+                     break;
+             }
+         }
+
+        private void drawGame(){
             screenWidth = device.PresentationParameters.BackBufferWidth;
             screenHeight = device.PresentationParameters.BackBufferHeight;
             Rectangle screenRectangle = new Rectangle(0, 0, screenWidth, screenHeight);
-             spriteBatch.Draw(backgroundTexture, screenRectangle, Color.White);
+            spriteBatch.Draw(backgroundTexture, screenRectangle, Color.White);
 
             //Aquiring the game object array 
-            
-         //   CanvasStructure [,] cellObjects = gamecanvas.cellObjects;
 
-            for(int i = 0; i < 10; i++)
+            //   CanvasStructure [,] cellObjects = gamecanvas.cellObjects;
+
+            for (int i = 0; i < 10; i++)
             {
-                for(int j = 0; j < 10; j++)
+                for (int j = 0; j < 10; j++)
                 {
                     int posx = size * i + space * (i + 1);
                     int posy = size * j + space * (j + 1);
-                    char r = GameCanvas.cells[j,i][0];
+                    char r = GameCanvas.cells[j, i][0];
                     Rectangle cellRectangle = new Rectangle(posx, posy, size, size);
-                    switch(r){
+                    switch (r)
+                    {
                         case 'W':
                             spriteBatch.Draw(water, cellRectangle, Color.White);
                             break;
@@ -77,18 +93,27 @@ namespace TankD2.Controllers
                             spriteBatch.Draw(stone, cellRectangle, Color.White);
                             break;
                         case 'P':
-                           // spriteBatch.Draw(t_up, cellRectangle, Color.White);
+                             spriteBatch.Draw(t_up, cellRectangle, Color.White);
                             break;
+                        case 'C':
+                            spriteBatch.Draw(coin, cellRectangle, Color.White);
+                            break;
+                        case 'L':
+                            spriteBatch.Draw(lifePack, cellRectangle, Color.White);
+                            break;
+
                         default:
-                    spriteBatch.Draw(cell, cellRectangle, Color.White);
+                            spriteBatch.Draw(cell, cellRectangle, Color.White);
                             break;
 
                     }
-                    
-                    
+
+
                 }
             }
-         }
+        }
+        private void drawMenu() { 
+        }
 
     }
 }

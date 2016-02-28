@@ -31,3 +31,6 @@ D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\Content\background.xnb
 D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\Content\briks.xnb
 D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\Content\stones.xnb
 D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\Content\water.xnb
+D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\Content\t_up.xnb
+D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\Content\lifepack.xnb
+D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\Content\coin.xnb

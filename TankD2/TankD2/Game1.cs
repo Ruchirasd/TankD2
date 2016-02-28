@@ -43,6 +43,7 @@ namespace TankD2
             ThreadPool.QueueUserWorkItem(new WaitCallback(connection.ReceiveData), null);
             Console.WriteLine("Start");
             connection.ConnectToServer("JOIN#");
+            BackgroundCon.state = 1;
             //connection.InitializeBackGroundThreads();
            
 

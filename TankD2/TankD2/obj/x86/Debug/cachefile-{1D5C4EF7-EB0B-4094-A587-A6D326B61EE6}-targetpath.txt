@@ -3,3 +3,6 @@ Content\cell.xnb
 Content\briks.xnb
 Content\stones.xnb
 Content\water.xnb
+Content\t_up.xnb
+Content\lifepack.xnb
+Content\coin.xnb
