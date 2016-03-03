@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TankD2.AI;
 using TankD2.Models;
 
 namespace TankD2.Controllers
@@ -85,6 +86,10 @@ namespace TankD2.Controllers
                     break;
 
             }
+            MainAI mainAI = new MainAI();
+           // mainAI.move();
+
+            Console.WriteLine("This works");
         }
 
        //initial point of tank
