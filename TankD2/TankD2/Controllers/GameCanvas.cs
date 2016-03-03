@@ -9,8 +9,7 @@ using TankD2.Models;
 namespace TankD2.Controllers
 {
     class GameCanvas
-
-   
+         
 
     {
         public static string[,] cells = new string[10,10];
@@ -66,7 +65,7 @@ namespace TankD2.Controllers
                     Console.WriteLine();
                     break;
                 case 'G':
-                    //Console.Write(reply);
+                    Console.Write(reply);
                     this.globalUpdate(reply);
                     this.printCanvas();
                     Console.WriteLine();

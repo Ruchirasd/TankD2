@@ -24,15 +24,16 @@ namespace TankD2
         BackgroundCon background;
         Connection connection;
         KeyboardState oldState;
+        MainAI mainAI;
         public delegate void ListenerDel(object sender);
         private void RaiseGameStartingEvent(Connection c)
         {
             // Safely invoke an event:
-            ListenerDel temp = c.ReceiveData;
+          /* ListenerDel temp = c.ReceiveData;
             if (temp != null)
             {
                 temp(null);
-            }
+            }*/
         }
 
         public Game1()
@@ -40,10 +41,15 @@ namespace TankD2
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             connection = new Connection();
+
+            mainAI = new MainAI();
+            
             ThreadPool.QueueUserWorkItem(new WaitCallback(connection.ReceiveData), null);
+            
             Console.WriteLine("Start");
             connection.ConnectToServer("JOIN#");
             BackgroundCon.state = 1;
+            //ThreadPool.QueueUserWorkItem(new WaitCallback(mainAI.runAI), connection);
             //connection.InitializeBackGroundThreads();
            
 

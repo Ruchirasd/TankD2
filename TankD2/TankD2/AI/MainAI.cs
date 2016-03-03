@@ -5,18 +5,26 @@ using System.Text;
 using TankD2.Controllers;
 using TankD2.Models;
 
-namespace TankD2.AI
+namespace TankD2
 {
     class MainAI
     {
         //GameCanvas gamecanvas = new GameCanvas();
         //CanvasStructure[,] cellObjects = GameCanvas.cellObjects;
-
+        Connection connection;
         CanvasStructure[,] cellObjects;
         Player myTank;
         int myPlayerX;
         int myPlayerY;
         Type objectType;
+
+
+        public void runAI(object info) {
+            connection = (Connection)info;
+            connection.ConnectToServer("SHOOT#");
+
+        
+        }
 
         public void GetMyTankPosition(CanvasStructure[,] cellobjects)
         {

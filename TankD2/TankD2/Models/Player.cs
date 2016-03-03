@@ -11,6 +11,10 @@ namespace TankD2.Models
         String direction;
         String name;
         int status; //status=1 when this is our player otherwise it is zero
+        int whethershot;
+        int health;
+        int coins;
+        int points;
     
         public Player(int status,String name,String x, String y, String direction) : base(x, y) {
             this.direction = direction;
@@ -42,6 +46,58 @@ namespace TankD2.Models
             set
             {
                 status = value;
+            }
+        }
+
+        public int Points
+        {
+            get
+            {
+                return points;
+            }
+
+            set
+            {
+                points = value;
+            }
+        }
+
+        public int Coins
+        {
+            get
+            {
+                return coins;
+            }
+
+            set
+            {
+                coins = value;
+            }
+        }
+
+        public int Health
+        {
+            get
+            {
+                return health;
+            }
+
+            set
+            {
+                health = value;
+            }
+        }
+
+        public int Whethershot
+        {
+            get
+            {
+                return whethershot;
+            }
+
+            set
+            {
+                whethershot = value;
             }
         }
     }

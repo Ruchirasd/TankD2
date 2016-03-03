@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using TankD2.Models;
 
-namespace TankD2.AI
+namespace TankD2
 {
     class TankOperation
     {
