@@ -16,8 +16,10 @@ namespace TankD2.Controllers
         public static CanvasStructure[,] cellObjects = new CanvasStructure[10, 10];     
         
         int noOfBricks = 0;
-        string[,] bricksCondition; 
+        string[,] bricksCondition;
 
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.Synchronized)]
         public GameCanvas() {
             //initiate array
             for (int i = 0; i < 10; i++)

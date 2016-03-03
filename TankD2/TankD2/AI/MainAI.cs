@@ -22,6 +22,7 @@ namespace TankD2
         public void runAI(object info) {
             connection = (Connection)info;
             connection.ConnectToServer("SHOOT#");
+            
 
         
         }

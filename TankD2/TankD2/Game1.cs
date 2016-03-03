@@ -25,7 +25,7 @@ namespace TankD2
         Connection connection;
         KeyboardState oldState;
         MainAI mainAI;
-        public delegate void ListenerDel(object sender);
+       // public delegate void ListenerDel(object sender);
         private void RaiseGameStartingEvent(Connection c)
         {
             // Safely invoke an event:
