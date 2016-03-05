@@ -1,3 +1,4 @@
 C:\Users\Yamuna\Desktop\game\TankD2\TankD2Content\obj\x86\Debug\TankD2Content.contentprojResolveAssemblyReference.cache
 C:\Users\Yamuna\Desktop\TankD2\TankD2\TankD2Content\obj\x86\Debug\TankD2Content.contentprojResolveAssemblyReference.cache
 D:\Projects\VS2015\TankD2\TankD2\TankD2Content\obj\x86\Debug\TankD2Content.contentprojResolveAssemblyReference.cache
+C:\Users\Yamuna\Desktop\New folder\TankD2\TankD2Content\obj\x86\Debug\TankD2Content.contentprojResolveAssemblyReference.cache

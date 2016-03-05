@@ -70,7 +70,7 @@ namespace TankD2
         /// </summary>
         protected override void Initialize()
         {
-            graphics.PreferredBackBufferWidth = 900;
+            graphics.PreferredBackBufferWidth = 1200;
             graphics.PreferredBackBufferHeight = 555;
             graphics.IsFullScreen = false;
             graphics.ApplyChanges();
