@@ -122,7 +122,17 @@ namespace TankD2.Controllers
         private void drawText() {
             spriteBatch.DrawString(font, "Player", new Vector2(600, 200), Color.AliceBlue);
             spriteBatch.DrawString(font, "Coins", new Vector2(600, 250), Color.AliceBlue);
-            spriteBatch.DrawString(font, "LifePacks", new Vector2(600, 300), Color.AliceBlue);    
+            spriteBatch.DrawString(font, "LifePacks", new Vector2(600, 300), Color.AliceBlue);
+
+            for (int i = 0; i < GameCanvas.players.Count;i++ )
+            {
+
+                spriteBatch.DrawString(font,GameCanvas.players[i].Name, new Vector2(700+(i*90), 200), Color.AliceBlue);
+                spriteBatch.DrawString(font, GameCanvas.players[i].Coins+"", new Vector2(700 + (i * 90), 250), Color.AliceBlue);
+                spriteBatch.DrawString(font, GameCanvas.players[i].Health+"", new Vector2(700 + (i * 90), 300), Color.AliceBlue);
+
+            }
+        
         
         }
         private void drawMenu() { 
