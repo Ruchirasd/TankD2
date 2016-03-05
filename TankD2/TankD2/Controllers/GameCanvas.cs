@@ -20,6 +20,8 @@ namespace TankD2.Controllers
         public static List<Coin> coinPiles = new List<Coin>();
         public static List<LifePack> lifePacks = new List<LifePack>();
         public static List<Brick> bricks = new List<Brick>();
+        
+
 
         int noOfBricks = 0;
         string[,] bricksCondition;
@@ -182,6 +184,9 @@ namespace TankD2.Controllers
 
                             //creating brick object
                             Brick brick = new Brick(xy[1], xy[0], 0.ToString());
+
+                            //add bricks to brick lists
+                            bricks.Add(brick);
                             cellObjects[Int32.Parse(xy[1]), Int32.Parse(xy[0])] = brick;
 
                             noOfBricks++;
@@ -191,6 +196,7 @@ namespace TankD2.Controllers
 
                             //creating stone pbject
                             Stone stone = new Stone(xy[1], xy[0]);
+
                             cellObjects[Int32.Parse(xy[1]), Int32.Parse(xy[0])] = stone;
 
                             break;
@@ -261,6 +267,7 @@ namespace TankD2.Controllers
                     players.Add(newplayer);
                 }
 
+                // for 2d array player info
                 //for (int j = 0; j < 7; j++)
                 //{
 
@@ -270,16 +277,13 @@ namespace TankD2.Controllers
 
             }
 
-            for (int h = 0; h < players.Count; h++) {
-                Console.Write(players[h].Name+ "  --");
-                Console.Write(players[h].Health + "  --");
-                Console.Write(players[h].Coins + "  --");
-                Console.Write(players[h].Points + "  --");
-                
-
-
-
-            }
+            //for (int h = 0; h < players.Count; h++) {
+            //    Console.Write(players[h].Name+ "  --");
+            //    Console.Write(players[h].Health + "  --");
+            //    Console.Write(players[h].Coins + "  --");
+            //    Console.Write(players[h].Points + "  --");
+               
+            //}
 
             String[] xy;
             //update canvas according to player position
@@ -322,6 +326,18 @@ namespace TankD2.Controllers
                 //for (int j = 0; j < 3; j++)
                 //    Console.Write("temp variable" + j + "is" + temp[j]);
                 this.updateBricks(temp[1], temp[0], temp[2], i);
+
+                //update brick objects
+                for(int j=0; j < bricks.Count; j++)
+                {
+                    if (temp[0] == bricks[j].X && temp[1] == bricks[j].Y)
+                    {
+                        bricks[j].DamageLevel = temp[2];
+                        break;
+                    }
+                        
+                }
+
             }
 
         }
@@ -343,6 +359,9 @@ namespace TankD2.Controllers
             String[] xy = new String[2];
             xy = val[1].Split(',');
             Coin coin = new Coin(xy[1], xy[0], val[2], val[3].Remove(val[3].Length - 2));
+            //add coins to the coin list
+            coinPiles.Add(coin);
+
             cells[Int32.Parse(xy[1]), Int32.Parse(xy[0])] = "C";
             // coin.startTimer(Int32.Parse(val[2]));
         }
@@ -353,6 +372,11 @@ namespace TankD2.Controllers
             String[] xy = new String[2];
             xy = val[1].Split(',');
             LifePack lifePack = new LifePack(xy[1], xy[0], val[2].Remove(val[2].Length - 2));
+
+            //add lifepacks to list
+            lifePacks.Add(lifePack);
+
+
             cells[Int32.Parse(xy[1]), Int32.Parse(xy[0])] = "L";
             //lifePack.startTimer(Int32.Parse(val[2].Remove(val[2].Length - 2)));
         }
