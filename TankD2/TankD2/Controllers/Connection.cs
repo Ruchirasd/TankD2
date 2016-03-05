@@ -30,8 +30,11 @@ namespace TankD2.Controllers
         private BackgroundWorker listenerThread = new BackgroundWorker();
         public void ReceiveData(object sender)
         {
-            //listner = new TcpListener(IPAddress.Parse(SERVER_IP), SERVER_PORT);
-            listner = new TcpListener(IPAddress.Any, SERVER_PORT);
+            try
+            {
+                //listner = new TcpListener(IPAddress.Parse(SERVER_IP), SERVER_PORT);
+                listner = new TcpListener(IPAddress.Any, SERVER_PORT);
+
             listner.Start();
                 Console.Write("Server started.....");
                
@@ -39,7 +42,7 @@ namespace TankD2.Controllers
                
                 while (true)
                 {
-                    try { 
+                   
                     //connection is connected socket
                     connection = listner.AcceptSocket();
                     //Console.WriteLine("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
@@ -69,17 +72,18 @@ namespace TankD2.Controllers
                    
                   
                     }
-                    }
-                    catch (Exception e)
-                    {
-
-                    }
+                   
                 }
-
-                
-               
+                 }
+                    catch (Exception e)
+            {
 
             }
+
+
+
+
+        }
 
 
         public  void ConnectToServer(String msg)

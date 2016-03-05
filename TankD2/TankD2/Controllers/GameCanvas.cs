@@ -268,12 +268,12 @@ namespace TankD2.Controllers
                 }
 
                 // for 2d array player info
-                //for (int j = 0; j < 7; j++)
-                //{
+                for (int j = 0; j < 7; j++)
+                {
 
-                //    playerInfo[i, j] = temp[j];
+                    playerInfo[i, j] = temp[j];
 
-                //}
+                }
 
             }
 
