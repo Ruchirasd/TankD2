@@ -15,7 +15,8 @@ namespace TankD2.Controllers
 {
     class Connection
     {
-        public const string SERVER_IP = "127.0.0.1";
+       // public const string SERVER_IP = "127.0.0.1";
+        public const string SERVER_IP = "192.168.1.2";
         public const int SERVER_PORT = 7000;
         private   BinaryWriter writer;
         private const string CLIENT_IP = "localhost";
@@ -28,9 +29,9 @@ namespace TankD2.Controllers
         private BackgroundWorker listenerThread = new BackgroundWorker();
         public void ReceiveData(object sender)
         {
-            listner = new TcpListener(IPAddress.Parse(SERVER_IP), SERVER_PORT);
-            
-                listner.Start();
+            //listner = new TcpListener(IPAddress.Parse(SERVER_IP), SERVER_PORT);
+            listner = new TcpListener(IPAddress.Any, SERVER_PORT);
+            listner.Start();
                 Console.Write("Server started.....");
                
                 Socket connection;

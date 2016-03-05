@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TankD2.AI;
+using TankD2;
 using TankD2.Models;
 
 namespace TankD2.Controllers
@@ -168,7 +168,7 @@ namespace TankD2.Controllers
         public void globalUpdate(String values)
         {
             String[] val = values.Split(':');
-            String[,] playerInfo = new String[5,7];
+            String[,] playerInfo = new String[5,7]; //player 
             String[] temp;
 
             //Store player infor in a 2D array
