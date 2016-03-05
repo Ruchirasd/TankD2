@@ -31,6 +31,8 @@ namespace TankD2.Controllers
         const int size = 50;
         public static int state = 0; //0=>start menu ,1=>game
 
+        SpriteFont font;
+
          internal BackgroundCon( ContentManager c, SpriteBatch s, GraphicsDeviceManager gr) : base(c, s,gr)
         {
             grx = gr;
@@ -49,6 +51,7 @@ namespace TankD2.Controllers
              screenWidth = device.PresentationParameters.BackBufferWidth;
              screenHeight = device.PresentationParameters.BackBufferHeight;
             cell = content.Load<Texture2D>("cell");
+            font = content.Load<SpriteFont>("myFont");
 
         }
 
@@ -111,6 +114,16 @@ namespace TankD2.Controllers
 
                 }
             }
+
+
+            drawText();
+        }
+
+        private void drawText() {
+            spriteBatch.DrawString(font, "Player", new Vector2(600, 200), Color.AliceBlue);
+            spriteBatch.DrawString(font, "Coins", new Vector2(600, 250), Color.AliceBlue);
+            spriteBatch.DrawString(font, "LifePacks", new Vector2(600, 300), Color.AliceBlue);    
+        
         }
         private void drawMenu() { 
         }

@@ -44,7 +44,9 @@ namespace TankD2
 
            // mainAI = new MainAI();
             GameCanvas.initiateArray();
-            
+
+
+
             ThreadPool.QueueUserWorkItem(new WaitCallback(connection.ReceiveData), null);
             
             Console.WriteLine("Start");
@@ -68,7 +70,7 @@ namespace TankD2
         /// </summary>
         protected override void Initialize()
         {
-            graphics.PreferredBackBufferWidth = 700;
+            graphics.PreferredBackBufferWidth = 900;
             graphics.PreferredBackBufferHeight = 555;
             graphics.IsFullScreen = false;
             graphics.ApplyChanges();

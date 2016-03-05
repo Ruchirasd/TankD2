@@ -219,9 +219,8 @@ namespace TankD2.Controllers
             String[] val = values.Split(':');
             String[,] playerInfo = new String[5, 7]; //player 
             String[] temp;
-            String[] xy;
-            Player mytank = players[0];
-            String mytankname = mytank.Name;
+            String[] xyn;
+            bool checklist = false;
 
             //Store player infor in a 2D array
             for (int i = 0; i < val.Length - 2; i++)
@@ -230,21 +229,30 @@ namespace TankD2.Controllers
                 if ((val[i + 1])[0] != 'P')
                     break;
                 temp = val[i + 1].Split(';');
-                xy = temp[1].Split(',');
-                
+                xyn = temp[1].Split(',');
+                Player newplayer;
 
                 //object oriented  approach
-                if (temp[0] == mytankname)
+                for (int r = 0; r < players.Count; r++)
                 {
-                    mytank.Whethershot = Int32.Parse(temp[3]);
-                    mytank.Health= Int32.Parse(temp[4]);
-                    mytank.Coins= Int32.Parse(temp[5]);
-                    mytank.Points= Int32.Parse(temp[6]);
+                    if (temp[0] == players[r].Name)
+                    {
 
+                        players[r].Whethershot = Int32.Parse(temp[3]);
+                        players[r].Health = Int32.Parse(temp[4]);
+                        players[r].Coins = Int32.Parse(temp[5]);
+                        players[r].Points = Int32.Parse(temp[6]);
+                        checklist = true;
+
+                    }
                 }
+                if (checklist == true)
+                    checklist = false;
+
                 else
                 {
-                    Player newplayer = new Player(0, temp[0], xy[0], xy[1], temp[2]);
+                    newplayer = new Player(0, temp[0], xyn[0], xyn[1], temp[2]);
+
                     newplayer.Whethershot = Int32.Parse(temp[3]);
                     newplayer.Health = Int32.Parse(temp[4]);
                     newplayer.Coins = Int32.Parse(temp[5]);
@@ -259,6 +267,17 @@ namespace TankD2.Controllers
                 //    playerInfo[i, j] = temp[j];
 
                 //}
+
+            }
+
+            for (int h = 0; h < players.Count; h++) {
+                Console.Write(players[h].Name+ "  --");
+                Console.Write(players[h].Health + "  --");
+                Console.Write(players[h].Coins + "  --");
+                Console.Write(players[h].Points + "  --");
+                
+
+
 
             }
 

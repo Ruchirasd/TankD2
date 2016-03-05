@@ -1,4 +1,3 @@
-D:\Projects\VS2015\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.csprojResolveAssemblyReference.cache
 D:\Projects\VS2015\TankD2\TankD2\TankD2\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\Projects\VS2015\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.csproj.GenerateResource.Cache
 D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\TankD2.exe
@@ -66,3 +65,5 @@ C:\Users\Yamuna\Desktop\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.csproj.Generat
 C:\Users\Yamuna\Desktop\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.exe
 C:\Users\Yamuna\Desktop\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.pdb
 C:\Users\Yamuna\Desktop\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.csprojResolveAssemblyReference.cache
+D:\Projects\VS2015\TankD2\TankD2\TankD2\bin\x86\Debug\Content\myFont.xnb
+D:\Projects\VS2015\TankD2\TankD2\TankD2\obj\x86\Debug\TankD2.csprojResolveAssemblyReference.cache
