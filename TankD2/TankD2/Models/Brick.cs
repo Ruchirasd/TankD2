@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TankD2.Models
 {
-    class Brick : CanvasStructure
+    public class Brick : CanvasStructure
     {
         String damageLevel;
 

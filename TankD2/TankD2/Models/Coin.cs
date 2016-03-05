@@ -8,7 +8,7 @@ using TankD2.Controllers;
 
 namespace TankD2.Models
 {
-    class Coin: CanvasStructure
+    public class Coin: CanvasStructure
     {
         private String time;
         private String value;

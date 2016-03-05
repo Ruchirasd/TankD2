@@ -19,8 +19,8 @@ namespace TankD2.Controllers
         //public const string SERVER_IP = "192.168.1.2";
         public const int SERVER_PORT = 7000;
         private   BinaryWriter writer;
-       // private const string CLIENT_IP = "localhost";
-        private const string CLIENT_IP = "192.168.1.2";
+        private const string CLIENT_IP = "localhost";
+        //private const string CLIENT_IP = "192.168.1.2";
         private const int CLIENT_PORT = 6000;
         private  TcpClient client;
         private TcpListener listner;

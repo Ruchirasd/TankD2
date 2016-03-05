@@ -8,7 +8,7 @@ using TankD2.Controllers;
 
 namespace TankD2.Models
 {
-    class LifePack: CanvasStructure
+    public class LifePack: CanvasStructure
     {
         String time;
         private bool state;
