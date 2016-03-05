@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TankD2.AI;
+using TankD2;
 using TankD2.Models;
 
 namespace TankD2.Controllers
 {
-    class GameCanvas
+    public class GameCanvas
          
 
     {
@@ -19,19 +19,55 @@ namespace TankD2.Controllers
         string[,] bricksCondition;
 
 
+        //[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.Synchronized)]
+        //public GameCanvas() {
+        //    //initiate array
+        //    for (int i = 0; i < 10; i++)
+        //    {
+        //        for (int j = 0; j < 10; j++)
+        //        {
+        //            cells[i, j] = "N";
+        //            cellObjects[i, j] = new CanvasStructure();
+                    
+        //        }
+        //    }
+        //}
+
+
+        //edited temp
+
         [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.Synchronized)]
-        public GameCanvas() {
-            //initiate array
+        public static void initiateArray()
+        {
             for (int i = 0; i < 10; i++)
             {
                 for (int j = 0; j < 10; j++)
                 {
                     cells[i, j] = "N";
                     cellObjects[i, j] = new CanvasStructure();
-                    
+
                 }
             }
+
         }
+
+
+
+        public GameCanvas()
+        {
+            //initiate array
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    for (int j = 0; j < 10; j++)
+            //    {
+            //        cells[i, j] = "N";
+            //        cellObjects[i, j] = new CanvasStructure();
+
+            //    }
+            //}
+        }
+
+
 
         public void printCanvas() {
 
@@ -58,28 +94,29 @@ namespace TankD2.Controllers
                 case 'I':
                     //Console.Write(reply);
                     this.initialcanvas(reply);
-                    this.printCanvas();
+                   // this.printCanvas();
                     Console.WriteLine();
+                    
                     break;
                 case 'S':
                     this.initiatePlayer(reply);
-                    this.printCanvas();
+                   // this.printCanvas();
                     Console.WriteLine();
                     break;
                 case 'G':
                     Console.Write(reply);
                     this.globalUpdate(reply);
-                    this.printCanvas();
+                  //  this.printCanvas();
                     Console.WriteLine();
                     break;
                 case 'C':
                     this.coinPile(reply);
-                    this.printCanvas();
+                 //   this.printCanvas();
                     Console.WriteLine();
                     break;
                 case 'L':
                     this.lifePackSet(reply);
-                    this.printCanvas();
+                 //   this.printCanvas();
                     Console.WriteLine();
                     break;
                 default:
@@ -87,7 +124,7 @@ namespace TankD2.Controllers
                     break;
 
             }
-            MainAI mainAI = new MainAI();
+            //MainAI mainAI = new MainAI();
            // mainAI.move();
 
             Console.WriteLine("This works");
@@ -168,7 +205,7 @@ namespace TankD2.Controllers
         public void globalUpdate(String values)
         {
             String[] val = values.Split(':');
-            String[,] playerInfo = new String[5,7];
+            String[,] playerInfo = new String[5,7]; //player 
             String[] temp;
 
             //Store player infor in a 2D array
@@ -242,7 +279,7 @@ namespace TankD2.Controllers
             xy = val[1].Split(',');
             Coin coin = new Coin(xy[1], xy[0], val[2], val[3].Remove(val[3].Length - 2));
             cells[Int32.Parse(xy[1]), Int32.Parse(xy[0])] = "C";
-
+           // coin.startTimer(Int32.Parse(val[2]));
         }
 
         public void lifePackSet(String values) {
@@ -251,6 +288,7 @@ namespace TankD2.Controllers
             xy = val[1].Split(',');
             LifePack lifePack = new LifePack(xy[1],xy[0], val[2].Remove(val[2].Length - 2));
             cells[Int32.Parse(xy[1]), Int32.Parse(xy[0])] = "L";
+            //lifePack.startTimer(Int32.Parse(val[2].Remove(val[2].Length - 2)));
         }
 
     }

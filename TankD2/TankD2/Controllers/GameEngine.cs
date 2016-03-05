@@ -20,7 +20,7 @@ namespace TankD2.Controllers
         public static void Resolve(object stateInfo) {
             String reply = (string)stateInfo;
 
-            switch (reply)
+           /* switch (reply)
             {
                 case "PLAYERS_FULL#":
                     Console.Write("PLAYERS_FULL");
@@ -56,6 +56,22 @@ namespace TankD2.Controllers
                     g.clientConnected(reply);
                     break;
 
+            }*/
+
+
+            if (reply.StartsWith("GAME"))
+            {
+                Console.WriteLine("not started");
+            }
+            else if (reply.StartsWith("TOO_QUICK"))
+            {
+                Console.WriteLine("too quick");
+
+            }
+            else
+            {
+                g.clientConnected(reply);
+            
             }
         }
 

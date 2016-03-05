@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using TankD2.Controllers;
 using TankD2.Models;
+
 
 namespace TankD2
 {
@@ -17,11 +19,22 @@ namespace TankD2
         int myPlayerX;
         int myPlayerY;
         Type objectType;
+        static int i = 0;
 
+        public void startAI(object info) {
+            Thread thread = new Thread(new ParameterizedThreadStart(runAI));
+            thread.Start(info);
+        
+        }
 
         public void runAI(object info) {
-            connection = (Connection)info;
-            connection.ConnectToServer("SHOOT#");
+            while (true)
+            {
+                connection = (Connection)info;
+                connection.ConnectToServer("SHOOT#");
+                Console.WriteLine("run AI");
+                Thread.Sleep(1400);
+            }
             
 
         

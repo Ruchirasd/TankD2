@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TankD2.Models
 {
-    class CanvasStructure
+    public class CanvasStructure
     {
         private String x;
         private String y;
