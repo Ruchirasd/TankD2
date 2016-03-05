@@ -15,11 +15,12 @@ namespace TankD2.Controllers
 {
     class Connection
     {
-       // public const string SERVER_IP = "127.0.0.1";
-        public const string SERVER_IP = "192.168.1.2";
+        public const string SERVER_IP = "127.0.0.1";
+        //public const string SERVER_IP = "192.168.1.2";
         public const int SERVER_PORT = 7000;
         private   BinaryWriter writer;
-        private const string CLIENT_IP = "localhost";
+       // private const string CLIENT_IP = "localhost";
+        private const string CLIENT_IP = "192.168.1.2";
         private const int CLIENT_PORT = 6000;
         private  TcpClient client;
         private TcpListener listner;
@@ -38,10 +39,13 @@ namespace TankD2.Controllers
                
                 while (true)
                 {
+                    try { 
                     //connection is connected socket
                     connection = listner.AcceptSocket();
+                    //Console.WriteLine("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                     if (connection.Connected)
                     {
+                        // Console.WriteLine("bbbbbb");
 
                         this.serverStream = new NetworkStream(connection);
 
@@ -58,11 +62,17 @@ namespace TankD2.Controllers
 
                         String reply = Encoding.UTF8.GetString(inputStr.ToArray());
 
-                    Console.Write(reply);
-                      
+                        Console.Write(reply);
+
                         ThreadPool.QueueUserWorkItem(new WaitCallback(GameEngine.Resolve), reply);
                         this.serverStream.Close();
+                   
                   
+                    }
+                    }
+                    catch (Exception e)
+                    {
+
                     }
                 }
 
@@ -94,7 +104,7 @@ namespace TankD2.Controllers
                 }
                 client.Close();
             }catch(SocketException e){
-                Console.WriteLine("unable to connect server");
+                Console.WriteLine("unable to connect server "+e);
             
             }
             

@@ -42,12 +42,15 @@ namespace TankD2
             Content.RootDirectory = "Content";
             connection = new Connection();
 
-            mainAI = new MainAI();
+           // mainAI = new MainAI();
+            GameCanvas.initiateArray();
             
             ThreadPool.QueueUserWorkItem(new WaitCallback(connection.ReceiveData), null);
             
             Console.WriteLine("Start");
             connection.ConnectToServer("JOIN#");
+            MainAI mainAI = new MainAI();
+            mainAI.startAI(connection);
             BackgroundCon.state = 1;
             //ThreadPool.QueueUserWorkItem(new WaitCallback(mainAI.runAI), connection);
             //connection.InitializeBackGroundThreads();
@@ -65,14 +68,15 @@ namespace TankD2
         /// </summary>
         protected override void Initialize()
         {
-            graphics.PreferredBackBufferWidth = 555;
+            graphics.PreferredBackBufferWidth = 700;
             graphics.PreferredBackBufferHeight = 555;
             graphics.IsFullScreen = false;
             graphics.ApplyChanges();
             Window.Title = "TankD2";
 
             oldState = Keyboard.GetState();
-
+            //edited temp
+            
             base.Initialize();
         }
 
